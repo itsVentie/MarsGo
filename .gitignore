@@ -1,0 +1,14 @@
+bin/
+main
+server
+.DS_Store
+Thumbs.db
+vendor/
+go.sum
+.idea/
+.vscode/
+*.swp
+EOF
+frontend/node_modules
+frontend/dist
+frontend/.next

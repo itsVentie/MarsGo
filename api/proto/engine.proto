@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package marsgo.api;
+option go_package = "marsgo/api";
+
+service MarsGoService {
+  rpc GetBestMove (MoveRequest) returns (MoveResponse);
+  
+  rpc ValidateMove (ValidateRequest) returns (ValidateResponse);
+}
+
+message MoveRequest {
+  string fen = 1;
+  int32 depth = 2;
+  int32 move_time_ms = 3;
+}
+
+message MoveResponse {
+  string best_move = 1; // Например: "e2e4,d2d4"
+  int32 evaluation = 2;
+}
+
+message ValidateRequest {
+  string fen = 1;
+  string move = 2;
+}
+
+message ValidateResponse {
+  bool is_legal = 1;
+  string error_message = 2;
+}

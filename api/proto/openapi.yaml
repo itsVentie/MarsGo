@@ -1,0 +1,21 @@
+openapi: 3.0.0
+info:
+  title: MarsGo API
+  version: 1.0.0
+paths:
+  /analyze:
+    post:
+      summary: Get best move for Marseille Chess
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                fen:
+                  type: string
+                depth:
+                  type: integer
+      responses:
+        '200':
+          description: Best move found
